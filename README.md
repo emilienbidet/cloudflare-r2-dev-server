@@ -2,6 +2,9 @@
 
 This is a workaround solution to serve Cloudlflare R2 images when developping locally. Made with [Bun](https://bun.sh/) and [Hono](https://hono.dev/).
 
+Waiting for this feature from wrangler:
+https://github.com/cloudflare/workers-sdk/issues/3687
+
 ## How to setup?
 
 Clone the repo at the root of your project.
