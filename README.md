@@ -50,11 +50,10 @@ Add `cloudflare-r2-dev-server/` to your `.gitignore` file
 Add cloudflare-r2-dev-server to your `tsconfig.json` file
 ```json
 {
- ... 
  "exclude": [
     "node_modules",
     "dist",
-    "cloudflare-r2-dev-server" // <-- Add this
+    "cloudflare-r2-dev-server"
   ]
 }
 ```
