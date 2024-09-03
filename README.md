@@ -43,4 +43,4 @@ Test it by uploading a image to the bucket and by trying access it with http://l
 
 🎉 Bravo! All your uploaded r2 images when developping locally are now available from http://localhost:3000/:key
 
-_Optional:_ You can add `cloudflare-r2-dev-server` to your `.gitignore` file
+_Optional:_ You can add `cloudflare-r2-dev-server/` to your `.gitignore` file
