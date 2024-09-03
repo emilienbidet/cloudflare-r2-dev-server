@@ -48,7 +48,7 @@ Test it by uploading a image to the bucket and by trying access it with http://l
 Add `cloudflare-r2-dev-server/` to your `.gitignore` file
 
 Add cloudflare-r2-dev-server to your `tsconfig.json` file
-```
+```json
 {
  ... 
  "exclude": [
