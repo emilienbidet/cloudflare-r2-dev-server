@@ -28,7 +28,7 @@ This is a example `.env` file:
 
 ```sh
 R2_BUCKET_NAME="kuma"
-R2_BUCKET_DABASE_NAME="4728dfd2675ad89b0cdad6672d49dacf952327a5040562ad905e0baa743495c6"
+R2_BUCKET_DATABASE_NAME="4728dfd2675ad89b0cdad6672d49dacf952327a5040562ad905e0baa743495c6"
 R2_BUCKET_PATH="../.wrangler/state/v3/r2/"
 PORT="3000" # optional
 ```
