@@ -21,8 +21,8 @@ const database = new Database(databasePath, { strict: true });
 
 const app = new Hono();
 
-app.get("/:key", (c) => {
-  const key = c.req.param("key");
+app.get("/*", (c) => {
+  const key = c.req.path.slice(1);  // trim the first forward slash since 'key' misses it
   const object = database
     .query(`SELECT * FROM _mf_objects WHERE key = $key`)
     .as(R2Object)
@@ -31,15 +31,16 @@ app.get("/:key", (c) => {
   if (!object) {
     return c.notFound();
   }
-
+  
+  const { contentType } = JSON.parse(object.http_metadata.toString());
+  
   const path = `${R2_BUCKET_PATH}/${R2_BUCKET_NAME}/blobs/${object.blob_id}`;
   const file = Bun.file(path);
   const stream = file.stream();
 
   const headers = new Headers();
-
-  headers.set("Content-Type", "application/octet-stream");
-  headers.set("Content-Disposition", `attachment; filename="${object.key}"`);
+  
+  headers.set("Content-Type", contentType);
   headers.set("Content-Length", object.size.toString());
   headers.set("ETag", object.etag);
   headers.set("Last-Modified", new Date(object.uploaded).toUTCString());
